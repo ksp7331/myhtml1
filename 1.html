@@ -1,0 +1,88 @@
+<!--템플릿 생성 :  ! > enter
+.js : class 선택자
+#js : id 선택자(id가 class보다 우선)
+js : tag 선택자  
+javascript 에서는 /* */ 가 주석
+
+
+-->
+
+
+<!--
+    javascript with css practice
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .js{
+            font-weight: bold;
+            color: red;
+        }
+        #first{
+            color: green;
+        }
+        span{
+            color: blue;
+        }
+        #play{
+            position: relative;  
+            width: 30px;  
+            height: 25px;       
+        }
+    </style>
+    <script src = "a.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous"></script> <!--jQuery-->
+    <script>// script src는 별도로
+        let intervalw=0;
+        let intervalh=0;
+        let clicktimes=0;
+    </script>
+    <title>Practice1</title>
+</head>
+<body>
+    <h1>HTML</h1>
+    <h2 style="color:powderblue; background-color: coral;">practice</h2>
+    <input id="night_day" type="button" value="night" onclick="
+        nightDayHandler(this); 
+    ">
+    
+    <input type="text" onchange="alert('changed')">
+    <input type="text" onkeydown="alert('keydown')">
+    <p>
+        <span id="first" class="js">Javascript</span > asdasdfsdfsdf <span class="js">Javascript</span> asdfhgsdf <span class="js">Javascript</span>
+        <span>nonono<br></span>
+
+    </p>
+    <script>
+        document.write("script");
+    </script>
+    <p></p>
+    <input id="play" type="button" onmouseenter="               
+        if(intervalw<800 && intervalh===0){
+            intervalw = intervalw + 40;
+            this.style.left= intervalw +'px';
+        } else if (intervalw===800 && intervalh<600){
+            intervalh = intervalh + 30;
+            this.style.top= intervalh +'px';
+        } else if (intervalw>0 && intervalh===600){
+            intervalw = intervalw - 40;
+            this.style.left= intervalw +'px';
+        } else if (intervalw===0 && intervalh>0){
+            intervalh = intervalh - 30;
+            this.style.top= intervalh +'px';
+        }
+        
+    " onclick="
+        clicktimes++;
+        this.value = clicktimes;
+    ">
+</body>
+</html>
